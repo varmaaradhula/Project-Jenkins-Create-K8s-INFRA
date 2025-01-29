@@ -50,9 +50,7 @@ pipeline{
                     script{
                         sh '''
                         terraform init \
-                          -backend-config="bucket=${S3_BUCKET}" \
-                          -backend-config="key=terraform/state.tfstate" \
-                          -backend-config="region=${AWS_REGION}"
+                          -backend-config="bucket=${S3_BUCKET}"
                           '''
                     }
                 }
