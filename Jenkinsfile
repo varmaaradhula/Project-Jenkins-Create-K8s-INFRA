@@ -109,12 +109,6 @@ pipeline{
 }
 
         stage('Retrieve Kubeconfig') {
-            when {
-                expression {
-                    // Execute only if Terraform Apply was successful
-                    return env.TERRAFORM_APPLY_STATUS == 'true'
-                }
-            }
             steps {
                 sh '''
                 # Example for AWS EKS
@@ -124,14 +118,6 @@ pipeline{
         }
 
         stage('Install Ingress Controller') {
-
-            when {
-                expression {
-                    // Execute only if Terraform Apply was successful
-                    return env.TERRAFORM_APPLY_STATUS == 'true'
-              }
-            }
-
             steps {
                 sh '''
                 # Install NGINX Ingress Controller using kubectl
