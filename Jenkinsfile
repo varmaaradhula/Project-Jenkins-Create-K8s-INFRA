@@ -103,8 +103,8 @@ pipeline{
 
         stage('Wait Before Proceeding') {
             steps {
-               echo 'Waiting for 60 seconds before proceeding...'
-               sleep(time: 900, unit: 'SECONDS')  // Adjust time as needed
+               echo 'Waiting for 120 seconds before proceeding...'
+               sleep(time: 120, unit: 'SECONDS')  // Adjust time as needed
     }
 }
 
@@ -121,7 +121,7 @@ pipeline{
                 script {
                     sh 'curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl'
                     sh "chmod +x kubectl"
-                    sh "mv kubectl /usr/local/bin/"
+                    sh "sudo mv kubectl /usr/local/bin/"
                 }
             }
         }
