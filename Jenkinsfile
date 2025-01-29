@@ -120,6 +120,7 @@ pipeline{
             steps {
                 script {
                     sh 'sudo curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl'
+                    sh 'sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl'
                     sh "sudo chmod +x kubectl"
                     sh "sudo mkdir -p ~/.local/bin"
                     sh 'sudo mv ./kubectl ~/.local/bin/kubectl'
