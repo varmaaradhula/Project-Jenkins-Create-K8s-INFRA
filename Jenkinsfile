@@ -112,7 +112,7 @@ pipeline{
             steps {
                 sh '''
                 # Example for AWS EKS
-                aws eks update-kubeconfig --region ${AWS_REGION} --name 'myvpro-EKS-Cluster'
+                aws eks update-kubeconfig --region ${AWS_REGION} --name 'Prome-EKS-Cluster'
                 '''
             }
         }
@@ -132,6 +132,7 @@ pipeline{
             steps {
                 sh '''
                 # Install NGINX Ingress Controller using kubectl
+                # Install
                 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
                 '''
             }
