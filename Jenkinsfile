@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        GIT_REPO_URL = 'https://github.com/varmaaradhula/Project-Jenkins-Infra.git'
+        GIT_REPO_URL = 'https://github.com/varmaaradhula/Project-Jenkins-Create-K8s-INFRA.git'
         GIT_BRANCH = 'master'
         S3_BUCKET = 'vprofile-terraform-state'
         TF_PATH = 'terraform'
