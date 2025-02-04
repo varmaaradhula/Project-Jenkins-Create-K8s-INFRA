@@ -7,5 +7,5 @@ variable "region" {
 variable "clusterName" {
     description = "Cluster name"
     type = string
-    default = "myvpro-EKS-Cluster"
+    default = "prome-EKS-Cluster"
 }
